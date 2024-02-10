@@ -1,15 +1,33 @@
 <!DOCTYPE html>
-<html>
-<body>
-        <button onclick="if (count>3){alert('YOU FOUND THE HIDDEN BUTTON')}else{alert('HI')}">CLICK ME</button>
-        <button id="one" style="background: white; border: None; color: white" onclick="count++"> A</button>
-    <script>var count=0</script>
-        
-    
+<html><head>
+<style>
+#clickme {
+    height:100px;
+    width:100px;
+    border-radius: 50%
+}
 
-    
+#one {
+    background: white;
+    border: white;
+    color: white;
+    position: absolute;
+}
+</style>
+</head><body>
 
+        <button id="clickme" onclick="if (count>3){alert('YOU FOUND THE HIDDEN BUTTON')}else{alert('HI')}">CLICK ME</button>
+        <button id="one" onclick="count++"> A</button>
+    <script>
+    var count=0
 
+    var nh = Math.floor(Math.random() * (window.innerHeight - 50));
+    var nw = Math.floor(Math.random() * (window.innerWidth - 50));
+    var e = document.body.querySelector("#one");
 
-</body>
-</html>
+    console.log([nh,nw,e])
+    e.style.top=nh.toString()+"px";
+    e.style.left=nw.toString()+"px";
+</script>
+
+</body></html>
