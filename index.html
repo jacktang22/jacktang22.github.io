@@ -4,7 +4,8 @@
 #clickme {
     height:100px;
     width:100px;
-    border-radius: 50%
+    border-radius: 50%;
+    position: absolute;
 }
 
 #one {
@@ -20,7 +21,6 @@
         <button id="one" onclick="count++"> A</button>
     <script>
     var count=0
-
     var nh = Math.floor(Math.random() * (window.innerHeight - 50));
     var nw = Math.floor(Math.random() * (window.innerWidth - 50));
     var e = document.body.querySelector("#one");
@@ -28,6 +28,9 @@
     console.log([nh,nw,e])
     e.style.top=nh.toString()+"px";
     e.style.left=nw.toString()+"px";
+
+    var c = document.body.querySelector("#clickme")
+    c.style.left=((window.innerWidth)/2-50).toString()+"px"
 </script>
 
 </body></html>
