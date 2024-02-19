@@ -1,36 +1,47 @@
 <!DOCTYPE html>
-<html><head>
-<style>
-#clickme {
-    height:100px;
-    width:100px;
-    border-radius: 50%;
-    position: absolute;
-}
+<html>
+<head>
+    <style>
+    #clickme {
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        position: absolute;
+        left: 50%;
+        -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
 
-#one {
-    background: white;
-    border: white;
-    color: white;
-    position: absolute;
-}
-</style>
-</head><body>
-
-        <button id="clickme" onclick="if (count>3){alert('YOU FOUND THE HIDDEN BUTTON')}else{alert('HI')}">CLICK ME</button>
-        <button id="one" onclick="count++"> A</button>
+    #one {
+        color: white;
+        background-color: white;
+        border: none;
+        position: absolute;
+    }
+    </style>
+</head>
+<body>
+    <button id="clickme" onclick="onBtnClick()">CLICK ME</button>
+    <button id="one" onclick="count++"> A</button>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script>
-    var count=0
-    var nh = Math.floor(Math.random() * (window.innerHeight - 50));
-    var nw = Math.floor(Math.random() * (window.innerWidth - 50));
-    var e = document.body.querySelector("#one");
+    let count = 0;
+    let nh = Math.floor(Math.random() * (window.innerHeight - 50));
+    let nw = Math.floor(Math.random() * (window.innerWidth - 50));
+    const e = $("#one");
 
-    console.log([nh,nw,e])
-    e.style.top=nh.toString()+"px";
-    e.style.left=nw.toString()+"px";
+    console.log([nh, nw, e]);
+    e.css("top", `${nh}px`);
+    e.css("left", `${nw}px`);
 
-    var c = document.body.querySelector("#clickme")
-    c.style.left=((window.innerWidth)/2-50).toString()+"px"
+    function onBtnClick() {
+        if (count > 3) {
+            alert('YOU FOUND THE HIDDEN BUTTON');
+        } else {
+            alert('HI');
+        }
+    }
 </script>
 
-</body></html>
+</body>
+</html>
