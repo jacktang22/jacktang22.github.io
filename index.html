@@ -22,7 +22,6 @@
     </style>
 </head>
 <body>
-    <p align="middle"> Find the hidden button and press 3 times before clicking "CLICK ME"</p>
     <button id="clickme" onclick="onBtnClick()">CLICK ME</button>
     <button id="one" onclick="count++"> A</button>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -40,7 +39,7 @@
         if (count >= 3) {
             alert('YOU FOUND THE HIDDEN BUTTON');
         } else {
-            alert('HI');
+            alert("Find the hidden button and press 3 times");
         }
     }
 </script>
